@@ -23,7 +23,7 @@ function CreatePost() {
     const token = localStorage.getItem("token");
 
     axios
-      .post("https://mern-backend-s5b5.onrender.com/api/posts", postData, {
+      .post("https://socialapp-gfqg.onrender.com/api/posts", postData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

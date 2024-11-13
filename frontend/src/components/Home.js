@@ -8,7 +8,7 @@ function Home({ isAuthenticated }) {
 
   useEffect(() => {
     axios
-      .get("https://mern-backend-s5b5.onrender.com/api/posts")
+      .get("https://socialapp-gfqg.onrender.com/api/posts")
       .then((response) => setPosts(response.data))
       .catch((error) => console.error("Error fetching posts:", error));
   }, []);
@@ -20,7 +20,7 @@ function Home({ isAuthenticated }) {
     }
 
     axios
-      .post(`https://mern-backend-s5b5.onrender.com/api/posts/like/${postId}`)
+      .post(`https://socialapp-gfqg.onrender.com/api/posts/like/${postId}`)
       .then((response) => {
         const updatedPosts = posts.map((post) =>
           post._id === postId ? response.data : post
@@ -38,7 +38,7 @@ function Home({ isAuthenticated }) {
 
     axios
       .post(
-        `https://mern-backend-s5b5.onrender.com/api/posts/comment/${postId}`,
+        `https://socialapp-gfqg.onrender.com/api/posts/comment/${postId}`,
         {
           text: commentText,
         }
@@ -61,7 +61,7 @@ function Home({ isAuthenticated }) {
 
     try {
       const response = await axios.delete(
-        `https://mern-backend-s5b5.onrender.com/api/posts/${postId}`
+        `https://socialapp-gfqg.onrender.com/api/posts/${postId}`
       );
       console.log("Post deleted:", response.data);
       const updatedPosts = posts.filter((post) => post._id !== postId);
