@@ -11,10 +11,10 @@ const Post = require("./models/Post");
 app.use(cors());
 app.use(bodyParser.json());
 
-const dbURI = "mongodb+srv://samiksha292003:Sam@123@cluster0.scc22.mongodb.net/mydatabase?retryWrites=true&w=majority"; 
+const dbURI = "mongodb+srv://samiksha292003:Sam%40123@cluster0.scc22.mongodb.net/mydatabase?retryWrites=true&w=majority"; 
 // MongoDB connection
 
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(dbURI)
   .then(() => {
     console.log('MongoDB connected successfully');
   })
